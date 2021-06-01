@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: myns
+  name: sa-token-test
+spec:
+  serviceAccountName: example-sa
+  containers:
+  - args:
+    - -text=Hello, Kakarot
+    image: hashicorp/http-echo
+    name: kakarot
